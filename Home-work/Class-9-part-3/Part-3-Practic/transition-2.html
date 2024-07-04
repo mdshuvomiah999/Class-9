@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav</title>
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Exo", sans-serif;
+      }
+      nav {
+        background-color: black;
+      }
+      nav ul {
+        text-align: center;
+        padding: 20px;
+      }
+      nav ul a {
+        color: white;
+        text-decoration: none;
+        margin: 10px;
+        font-weight: 500;
+        font-size: 1.2rem;
+        position: relative;
+        letter-spacing: 2px;
+        transition: color 0.5s linear;
+      }
+      ul a:hover {
+        color: mediumturquoise;
+      }
+      ul a::after {
+        position: absolute;
+        background-color: mediumturquoise;
+        bottom: -5px;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 1px;
+        transform: translate(-50px);
+        border-radius: 1.4px;
+        visibility: hidden;
+        transition: transform 0.3s cubic-bezier(0.39, -0.5, 0.65, 1.61);
+      }
+      ul a:hover::after {
+        visibility: visible;
+        transform: translate(0px);
+      }
+    </style>
+    <nav>
+      <ul>
+        <a href="#">Home</a>
+        <a href="#">Product</a>
+        <a href="#">Order</a>
+        <a href="#">Price</a>
+        <a href="#">Contact</a>
+      </ul>
+    </nav>
+  </body>
+</html>

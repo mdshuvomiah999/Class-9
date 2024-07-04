@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tooltip</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: rgba(255, 255, 255, 0.733);
+        color: hotpink;
+        font-family: "Roboto", sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 100px auto;
+      }
+      .tooltip {
+        cursor: grab;
+        position: relative;
+      }
+      .tooltip::after,
+      .tooltip::before {
+        /* This is left section  */
+
+        /* top: 50%;
+        right: 100%;
+        margin-right: 15px;
+        transform: translate(0, -50%); */
+
+        /* This is top section  */
+
+        /* bottom: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        margin-bottom: 15px; */
+
+        /* This is bottom section  */
+
+        /* top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 15px; */
+
+        /* This is right positon  */
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1s;
+      }
+      .tooltip:hover::after,
+      .tooltip:hover::before {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .tooltip::after {
+        content: attr(data-tooltip);
+        color: rgb(255, 255, 255);
+        font-size: 0.4em;
+        font-weight: normal;
+        padding: 10px;
+        background-color: black;
+        border-radius: 5px;
+      }
+      .tooltip::before {
+        content: "";
+        width: 0;
+        height: 0;
+        /* This is left section  */
+
+        /* border-top: 5px solid transparent;
+        border-left: 8px solid #222;
+        border-bottom: 5px solid transparent;
+        margin-right: 7px; */
+
+        /* This is Top section  */
+
+        /* border-top: 8px solid black;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        margin-bottom: 7px; */
+
+        /* This is bottom section  */
+
+        /* border-bottom: 8px solid #222;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        margin-top: 7px; */
+
+        /* This is right positon  */
+
+        border-top: 5px 0 solid transparent;
+        border-left: 8px solid #222;
+        border-bottom: 5px solid transparent;
+        margin-right: 10px;
+
+        /* border-top: 8px solid transparent; */
+
+        /* border-top: 5px solid transparent;
+        border-left: 8px solid #222;
+        border-right: 5px solid transparent;
+        margin-right: 2px; */
+
+        /* margin-top: 10px; */
+      }
+    </style>
+  </head>
+  <body>
+    <p><abbr data-tooltip="JavaScript" class="tooltip">JS</abbr></p>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Raleway", sans-serif;
+      }
+
+      /* This header part  */
+      header {
+        background-color: #eee;
+        position: sticky;
+        top: 0;
+      }
+      .container {
+        max-width: 980px;
+        height: 10.5vh;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 30px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo h2 {
+        font-size: 35px;
+        color: green;
+        cursor: pointer;
+        letter-spacing: 1.5px;
+      }
+      .logo h2 span {
+        color: orangered;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      ul li {
+        list-style: none;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 8px 16px;
+        background-color: transparent;
+        color: black;
+        position: relative;
+        transition: all 0.3s;
+        margin: 0 5px;
+        border-radius: 5px;
+        letter-spacing: 0.5px;
+      }
+      li:hover,
+      .active {
+        background-color: gold;
+      }
+      ul li::after {
+        position: absolute;
+        content: "";
+        bottom: -7px;
+        left: 0;
+        width: 100%;
+        height: 1.8px;
+        background-color: green;
+        visibility: hidden;
+        transform: translate(-50px);
+        transition: all 0.3s cubic-bezier(1, -0.61, 0, 1.57);
+      }
+      li:hover:after {
+        width: 100%;
+        transform: translate(0);
+        visibility: visible;
+        border-radius: 4px;
+      }
+      ul li::before {
+        position: absolute;
+        content: "";
+        top: -7px;
+        right: 0;
+        width: 100%;
+        height: 1.8px;
+        background-color: orangered;
+        transform: translate(-50px);
+        transition: all 0.3s cubic-bezier(1, -0.61, 0, 1.57);
+        visibility: hidden;
+      }
+      li:hover::before {
+        transform: translate(0);
+        visibility: visible;
+        border-radius: 4px;
+      }
+      /* This is background container part  */
+      .jewellery-bg-container {
+        width: 100%;
+        height: 60vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .Ornaments {
+        background-image: url(./Image/jewellery-1/jewellery-3.jpg);
+      }
+
+      .Engagement {
+        background-image: url(./Image/jewellery-1/jewellery-1.jpg);
+      }
+      .Earrings {
+        background-image: url(./Image/jewellery-1/jewellery-2.jpg);
+      }
+      .jewellery-bg-container h1 {
+        color: gold;
+        letter-spacing: 0.7px;
+        font-size: 40px;
+        font-weight: 800;
+
+        padding: 200px 0 0 75px;
+      }
+      .jewellery-bg-container h1 span {
+        color: white;
+      }
+      .jewellery-name-details-container {
+        margin: 50px;
+        text-align: center;
+      }
+      .jewellery-name-details-container h1 {
+        font-size: 2.5rem;
+        color: goldenrod;
+        margin-bottom: 12px;
+        letter-spacing: 0.5px;
+      }
+      .jewellery-name-details-container h1 span {
+        color: green;
+      }
+      .jewellery-name-details-container p {
+        text-align: justify;
+        font-size: 18px;
+      }
+      .jewellery-name-details-container a {
+        text-decoration: none;
+        font-size: 19px;
+        background-color: orangered;
+        color: white;
+        padding: 8px 21px;
+        font-weight: 500;
+        border-radius: 5px;
+        margin-top: 20px;
+        display: inline-block;
+        text-transform: uppercase;
+        box-shadow: inset 0 0 0 0 black;
+        transition: all 1.5s;
+      }
+      .jewellery-name-details-container a:hover {
+        box-shadow: inset 0 0 0 50px black;
+        color: white;
+      }
+      footer p {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h2>Jewe<span>llery</span></h2>
+        </div>
+        <ul>
+          <li class="active">Home</li>
+          <li>Product</li>
+          <li>Order</li>
+          <li>Services</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="container-2">
+        <div class="jewellery-name-1">
+          <div class="jewellery-bg-container Ornaments">
+            <h1>Orna<span>mets</span></h1>
+          </div>
+          <div class="jewellery-name-details-container ornamets-text">
+            <h1>The Most Expensive Ornamets <span>Jewellery</span></h1>
+            <p>
+              The most common use of ornament is probably in Christmas
+              ornaments, which decorate a tree. Similarly, any ornament makes
+              something prettier, flashier, or more festive. When you ornament
+              something, you're beautifying, embellishing, or adorning it. Women
+              ornament themselves with makeup.
+            </p>
+            <a href="#">Explore More</a>
+          </div>
+        </div>
+        <div class="jewellery-name-2">
+          <div class="jewellery-bg-container Engagement">
+            <h1>Engagement<span> Ring</span></h1>
+          </div>
+          <div class="jewellery-name-details-container engagement-text">
+            <h1>The Most Expensive Engagement Ring<span> Jewellery</span></h1>
+            <p>
+              The most common use of ornament is probably in Christmas
+              ornaments, which decorate a tree. Similarly, any ornament makes
+              something prettier, flashier, or more festive. When you ornament
+              something, you're beautifying, embellishing, or adorning it. Women
+              ornament themselves with makeup.
+            </p>
+            <a href="#">Explore More</a>
+          </div>
+        </div>
+        <div class="jewellery-name-3">
+          <div class="jewellery-bg-container Earrings">
+            <h1>Ear<span>rings</span></h1>
+          </div>
+          <div class="jewellery-name-details-container earrign-text">
+            <h1>The Most Expensive Earrign <span>Jewellery</span></h1>
+            <p>
+              The most common use of ornament is probably in Christmas
+              ornaments, which decorate a tree. Similarly, any ornament makes
+              something prettier, flashier, or more festive. When you ornament
+              something, you're beautifying, embellishing, or adorning it. Women
+              ornament themselves with makeup.
+            </p>
+            <a href="#">Explore More</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2024, Jewellery</p>
+    </footer>
+  </body>
+</html>

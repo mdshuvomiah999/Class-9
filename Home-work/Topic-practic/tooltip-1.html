@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToolTip-1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: aliceblue;
+        font-family: sans-serif;
+        color: rgb(0, 174, 214);
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 100px 0 0;
+      }
+      .tooltip-1 {
+        cursor: grab;
+        position: relative;
+      }
+      .tooltip-1::after,
+      .tooltip-1::before {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+
+        /* top: 50%;
+        right: 100%;
+        transform: translate(0, -50%);
+        margin-right: 15px; */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1.8s;
+      }
+      .tooltip-1:hover::after,
+      .tooltip-1:hover::before {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .tooltip-1::after {
+        content: attr(data-tooltip-1);
+        color: #fff;
+        background-color: black;
+        font-size: 0.3em;
+        font-weight: normal;
+        padding: 10px;
+        border-radius: 3px;
+      }
+      .tooltip-1::before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-bottom: 8px solid #222;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        margin-top: -7px;
+
+        /* border-top: 5px solid transparent;
+        border-left: 8px solid #222;
+        margin-right: 7px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p><abbr data-tooltip-1="JavaScript" class="tooltip-1">JS</abbr></p>
+    </div>
+  </body>
+</html>
